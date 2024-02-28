@@ -17,7 +17,7 @@
 //Pioneer Diver of Dead Waters 65-68
 //Watchmaker, Master of Dream Machinations 69-72
 
-
+/*
 Console.WriteLine("Enter the character that will use this relic");
 string character = Console.ReadLine();
 
@@ -37,18 +37,21 @@ Console.WriteLine("Enter the character WorldLevel");
 string TrailblazeLvl = Console.ReadLine();
 
 characterCreate(character, Int32.Parse(lvl), Int32.Parse(eidelon), Int32.Parse(ascention), Int32.Parse(health), Int32.Parse(TrailblazeLvl));
+*/
+string relicName = "Passerby of Wandering Cloud Head";
+int relicId = getRelic(relicName);
 
-int relicId = getRelic("Passerby of Wandering Cloud Head");
+relicCreate(relicName, relicId);
 
 
 void relicCreate(string name,int relicId)
 {
-    BattleRelic relic = new BattleRelic
+    var relic = new BattleRelic
     {
         BattleRelicId = relicId,
         Level = 15,
         MainAffixId = 5,
-        subAffixes = new List<RelicAffix>
+        SubAffixes = new List<RelicAffix>
         {
             new RelicAffix {
                 AffixId = 1,
@@ -57,8 +60,7 @@ void relicCreate(string name,int relicId)
             }
         }
     };
-
-
+    Console.WriteLine(relic.ToString());
 }
 void characterCreate(String name, int level, int Eidelon, int ascention, int health, int TrailblazeLvl)
 {
@@ -105,7 +107,7 @@ int getCharacterNamesIndex(string name)
     return 0;
 }
 int getRelic(string name)
-{
+{   //an array that stores all the relic names in star rail version 2.1
     string[] relicName = { "Passerby of Wandering Cloud Head", "Passerby of Wandering Cloud Hand", "Passerby of Wandering Cloud Body", "Passerby of Wandering Cloud Feet",
     "Musketeer of Wild Wheat Head", "Musketeer of Wild Wheat Hand", "Musketeer of Wild Wheat Body", "Musketeer of Wild Wheat Feet", "Knight of Purity Palace Head", "Knight of Purity Palace Hand",
     "Knight of Purity Palace Body", "Knight of Purity Palace Feet","Hunter of Glacial Forest Head","Hunter of Glacial Forest Hand" , "Hunter of Glacial Forest Body" , "Hunter of Glacial Forest Feet",
@@ -132,7 +134,7 @@ int getRelic(string name)
     return 0;
 }
 int getRelicId(int index)
-{
+{   //an array that stores all the relic Ids in star rail version 2.1
     int[] relicId = { 61011, 61012, 61013, 61014, 61021, 61022, 61023, 61024, 61031, 61032, 61033, 61034, 61041, 61042, 61043, 61044, 61051, 61052, 61053, 61054, 61051, 61052, 61053, 61054,
     61071,61072,61073,61074,61081,61082,61083,61084,61091,61092,61093,61094,61101,61102,61103,61104,61111,61112,61113,61114,61121,61122,61123,61124,61131,61132,61133,61134,61141,61143,
     61143,61144,61151,61152,61153,61154,61161,61162,61163,61164,61171,61172,61173,61174,61181,61182,61183,61184};
