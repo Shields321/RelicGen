@@ -7,7 +7,6 @@ public class BattleRelic
     public int Level { get; set; }
     public int MainAffixId { get; set; }
     public List<RelicAffix> SubAffixes { get; set; } = new List<RelicAffix>();
-
     public override string ToString()
     {
         // Create a string representation of the BattleRelic object including SubAffixes
@@ -21,7 +20,6 @@ public partial class RelicAffix
     public uint AffixId { get; set; }
     public uint Cnt { get; set; }
     public uint Step { get; set; }
-
     public override string ToString()
     {
         // Create a string representation of the RelicAffix object

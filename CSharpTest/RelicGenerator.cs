@@ -16,8 +16,24 @@
 //Prisoner in Deep Confinement 61-64
 //Pioneer Diver of Dead Waters 65-68
 //Watchmaker, Master of Dream Machinations 69-72
+string[] relicName = { "Passerby of Wandering Cloud Head", "Passerby of Wandering Cloud Hand", "Passerby of Wandering Cloud Body", "Passerby of Wandering Cloud Feet",
+    "Musketeer of Wild Wheat Head", "Musketeer of Wild Wheat Hand", "Musketeer of Wild Wheat Body", "Musketeer of Wild Wheat Feet", "Knight of Purity Palace Head", "Knight of Purity Palace Hand",
+    "Knight of Purity Palace Body", "Knight of Purity Palace Feet","Hunter of Glacial Forest Head","Hunter of Glacial Forest Hand" , "Hunter of Glacial Forest Body" , "Hunter of Glacial Forest Feet",
+        "Champion of Streetwise Boxing Head", "Champion of Streetwise Boxing Hand", "Champion of Streetwise Boxing Body",
+    "Champion of Streetwise Boxing Feet", "Guard of Wuthering Snow Head", "Guard of Wuthering Snow Hand", "Guard of Wuthering Snow Body", "Guard of Wuthering Snow Feet",
+    "Firesmith of Lava-Forging Head", "Firesmith of Lava-Forging Hand", "Firesmith of Lava-Forging Body", "Firesmith of Lava-Forging Feet",
+    "Genius of Brilliant Stars Head","Genius of Brilliant Stars Hand","Genius of Brilliant Stars Body","Genius of Brilliant Stars Feet","Band of Sizzling Thunder Head","Band of Sizzling Thunder Hand",
+    "Band of Sizzling Thunder Head Body","Band of Sizzling Thunder Head Feet",
+    "Eagle of Twilight Line Head","Eagle of Twilight Line Hand","Eagle of Twilight Line Body","Eagle of Twilight Line Feet","Thief of Shooting Meteor Head","Thief of Shooting Meteor Hand",
+    "Thief of Shooting Meteor Body","Thief of Shooting Meteor Feet","Wastelander of Banditry Desert Head","Wastelander of Banditry Desert Hand","Wastelander of Banditry Desert Body",
+    "Wastelander of Banditry Desert Feet","Longevous Disciple Head","Longevous Disciple Hand","Longevous Disciple Body","Longevous Disciple Feet","Messenger Traversing Hackerspace Head",
+    "Messenger Traversing Hackerspace Hand","Messenger Traversing Hackerspace Body","Messenger Traversing Hackerspace Feet","The Ashblazing Grand Duke Head","The Ashblazing Grand Duke Hand",
+    "The Ashblazing Grand Duke Body","The Ashblazing Grand Duke Feet",
+    "Prisoner in Deep Confinement Head","Prisoner in Deep Confinement Hand","Prisoner in Deep Confinement Body","Prisoner in Deep Confinement Feet","Pioneer Diver of Dead Waters Haed",
+    "Pioneer Diver of Dead Waters Hand","Pioneer Diver of Dead Waters Body","Pioneer Diver of Dead Waters Feet","Watchmaker, Master of Dream Machinations Head","Watchmaker, Master of Dream Machinations Hand",
+        "Watchmaker, Master of Dream Machinations Body","Watchmaker, Master of Dream Machinations Feet"};
 
-/*
+
 Console.WriteLine("Enter the character that will use this relic");
 string character = Console.ReadLine();
 
@@ -37,11 +53,17 @@ Console.WriteLine("Enter the character WorldLevel");
 string TrailblazeLvl = Console.ReadLine();
 
 characterCreate(character, Int32.Parse(lvl), Int32.Parse(eidelon), Int32.Parse(ascention), Int32.Parse(health), Int32.Parse(TrailblazeLvl));
-*/
-string relicName = "Passerby of Wandering Cloud Head";
-int relicId = getRelic(relicName);
 
-relicCreate(relicName, relicId);
+
+foreach (string name in relicName)
+{
+    Console.WriteLine(name);
+}
+Console.WriteLine("Enter the name for the relic");
+string userRelicName = Console.ReadLine();
+int relicId = getRelic(userRelicName);
+
+relicCreate(userRelicName, relicId);
 
 
 void relicCreate(string name,int relicId)
@@ -108,22 +130,7 @@ int getCharacterNamesIndex(string name)
 }
 int getRelic(string name)
 {   //an array that stores all the relic names in star rail version 2.1
-    string[] relicName = { "Passerby of Wandering Cloud Head", "Passerby of Wandering Cloud Hand", "Passerby of Wandering Cloud Body", "Passerby of Wandering Cloud Feet",
-    "Musketeer of Wild Wheat Head", "Musketeer of Wild Wheat Hand", "Musketeer of Wild Wheat Body", "Musketeer of Wild Wheat Feet", "Knight of Purity Palace Head", "Knight of Purity Palace Hand",
-    "Knight of Purity Palace Body", "Knight of Purity Palace Feet","Hunter of Glacial Forest Head","Hunter of Glacial Forest Hand" , "Hunter of Glacial Forest Body" , "Hunter of Glacial Forest Feet",
-        "Champion of Streetwise Boxing Head", "Champion of Streetwise Boxing Hand", "Champion of Streetwise Boxing Body",
-    "Champion of Streetwise Boxing Feet", "Guard of Wuthering Snow Head", "Guard of Wuthering Snow Hand", "Guard of Wuthering Snow Body", "Guard of Wuthering Snow Feet",
-    "Firesmith of Lava-Forging Head", "Firesmith of Lava-Forging Hand", "Firesmith of Lava-Forging Body", "Firesmith of Lava-Forging Feet",
-    "Genius of Brilliant Stars Head","Genius of Brilliant Stars Hand","Genius of Brilliant Stars Body","Genius of Brilliant Stars Feet","Band of Sizzling Thunder Head","Band of Sizzling Thunder Hand",
-    "Band of Sizzling Thunder Head Body","Band of Sizzling Thunder Head Feet",
-    "Eagle of Twilight Line Head","Eagle of Twilight Line Hand","Eagle of Twilight Line Body","Eagle of Twilight Line Feet","Thief of Shooting Meteor Head","Thief of Shooting Meteor Hand",
-    "Thief of Shooting Meteor Body","Thief of Shooting Meteor Feet","Wastelander of Banditry Desert Head","Wastelander of Banditry Desert Hand","Wastelander of Banditry Desert Body",
-    "Wastelander of Banditry Desert Feet","Longevous Disciple Head","Longevous Disciple Hand","Longevous Disciple Body","Longevous Disciple Feet","Messenger Traversing Hackerspace Head",
-    "Messenger Traversing Hackerspace Hand","Messenger Traversing Hackerspace Body","Messenger Traversing Hackerspace Feet","The Ashblazing Grand Duke Head","The Ashblazing Grand Duke Hand",
-    "The Ashblazing Grand Duke Body","The Ashblazing Grand Duke Feet",
-    "Prisoner in Deep Confinement Head","Prisoner in Deep Confinement Hand","Prisoner in Deep Confinement Body","Prisoner in Deep Confinement Feet","Pioneer Diver of Dead Waters Haed",
-    "Pioneer Diver of Dead Waters Hand","Pioneer Diver of Dead Waters Body","Pioneer Diver of Dead Waters Feet","Watchmaker, Master of Dream Machinations Head","Watchmaker, Master of Dream Machinations Hand",
-        "Watchmaker, Master of Dream Machinations Body","Watchmaker, Master of Dream Machinations Feet"};
+    
     for (int i = 0; i <= relicName.Length; i++)
     {
         if (relicName[i].ToLower() == name.ToLower())
