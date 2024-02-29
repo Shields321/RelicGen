@@ -17,7 +17,7 @@
 //The Ashblazing Grand Duke 57-60
 //Prisoner in Deep Confinement 61-64
 //Pioneer Diver of Dead Waters 65-68
-//Watchmaker, Master of Dream Machinations 69-72
+//Watchmaker Master of Dream Machinations 69-72
 using CSharpTest;
 using GUi;
 
@@ -41,7 +41,7 @@ string[] relicName =
 "The Ashblazing Grand Duke Head","The Ashblazing Grand Duke Hand","The Ashblazing Grand Duke Body","The Ashblazing Grand Duke Feet",
 "Prisoner in Deep Confinement Head","Prisoner in Deep Confinement Hand","Prisoner in Deep Confinement Body","Prisoner in Deep Confinement Feet",
 "Pioneer Diver of Dead Waters Haed","Pioneer Diver of Dead Waters Hand","Pioneer Diver of Dead Waters Body","Pioneer Diver of Dead Waters Feet",
-"Watchmaker, Master of Dream Machinations Head","Watchmaker, Master of Dream Machinations Hand","Watchmaker, Master of Dream Machinations Body","Watchmaker, Master of Dream Machinations Feet"};
+"Watchmaker Master of Dream Machinations Head","Watchmaker Master of Dream Machinations Hand","Watchmaker Master of Dream Machinations Body","Watchmaker Master of Dream Machinations Feet"};
 
 List<string> avatarData = createGui();//gets the Character the user inputted
 string character = avatarData[0];
