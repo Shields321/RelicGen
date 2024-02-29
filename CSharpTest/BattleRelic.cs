@@ -26,3 +26,19 @@ public partial class RelicAffix
         return $"AffixId: {AffixId}, Cnt: {Cnt}, Step: {Step}";
     }
 }
+public partial class RelicStats
+{
+    public uint FlatHp { get; set; }
+    public uint HpPercent { get; set; }
+    public uint FlatAtk { get; set; }
+    public uint AtkPercent { get; set; }
+    public uint FlatDef { get; set; }
+    public uint DefPercent { get; set;}
+    public uint CritDamage { get; set; }
+    public uint CritRate { get; set; }
+    public uint EffectHitRate { get; set; }
+    public uint EffectRes {  get; set; }
+    public uint Speed { get; set;}
+    public uint BreakEffect { get; set; }
+}
+

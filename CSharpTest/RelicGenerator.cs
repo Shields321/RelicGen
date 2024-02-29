@@ -1,4 +1,6 @@
-﻿//Passerby of Wandering Cloud 0-3
+﻿//Goal - make it so that a gui will display the prompts and after display the final data that would originaly be put into the hsr ps
+
+//Passerby of Wandering Cloud 0-3
 //Musketeer of Wild Wheat 4-7
 //Knight of Purity Palace 8-11
 //Hunter of Glacial Forest 12-15
@@ -16,92 +18,108 @@
 //Prisoner in Deep Confinement 61-64
 //Pioneer Diver of Dead Waters 65-68
 //Watchmaker, Master of Dream Machinations 69-72
-string[] relicName = { "Passerby of Wandering Cloud Head", "Passerby of Wandering Cloud Hand", "Passerby of Wandering Cloud Body", "Passerby of Wandering Cloud Feet",
-    "Musketeer of Wild Wheat Head", "Musketeer of Wild Wheat Hand", "Musketeer of Wild Wheat Body", "Musketeer of Wild Wheat Feet", "Knight of Purity Palace Head", "Knight of Purity Palace Hand",
-    "Knight of Purity Palace Body", "Knight of Purity Palace Feet","Hunter of Glacial Forest Head","Hunter of Glacial Forest Hand" , "Hunter of Glacial Forest Body" , "Hunter of Glacial Forest Feet",
-        "Champion of Streetwise Boxing Head", "Champion of Streetwise Boxing Hand", "Champion of Streetwise Boxing Body",
-    "Champion of Streetwise Boxing Feet", "Guard of Wuthering Snow Head", "Guard of Wuthering Snow Hand", "Guard of Wuthering Snow Body", "Guard of Wuthering Snow Feet",
-    "Firesmith of Lava-Forging Head", "Firesmith of Lava-Forging Hand", "Firesmith of Lava-Forging Body", "Firesmith of Lava-Forging Feet",
-    "Genius of Brilliant Stars Head","Genius of Brilliant Stars Hand","Genius of Brilliant Stars Body","Genius of Brilliant Stars Feet","Band of Sizzling Thunder Head","Band of Sizzling Thunder Hand",
-    "Band of Sizzling Thunder Head Body","Band of Sizzling Thunder Head Feet",
-    "Eagle of Twilight Line Head","Eagle of Twilight Line Hand","Eagle of Twilight Line Body","Eagle of Twilight Line Feet","Thief of Shooting Meteor Head","Thief of Shooting Meteor Hand",
-    "Thief of Shooting Meteor Body","Thief of Shooting Meteor Feet","Wastelander of Banditry Desert Head","Wastelander of Banditry Desert Hand","Wastelander of Banditry Desert Body",
-    "Wastelander of Banditry Desert Feet","Longevous Disciple Head","Longevous Disciple Hand","Longevous Disciple Body","Longevous Disciple Feet","Messenger Traversing Hackerspace Head",
-    "Messenger Traversing Hackerspace Hand","Messenger Traversing Hackerspace Body","Messenger Traversing Hackerspace Feet","The Ashblazing Grand Duke Head","The Ashblazing Grand Duke Hand",
-    "The Ashblazing Grand Duke Body","The Ashblazing Grand Duke Feet",
-    "Prisoner in Deep Confinement Head","Prisoner in Deep Confinement Hand","Prisoner in Deep Confinement Body","Prisoner in Deep Confinement Feet","Pioneer Diver of Dead Waters Haed",
-    "Pioneer Diver of Dead Waters Hand","Pioneer Diver of Dead Waters Body","Pioneer Diver of Dead Waters Feet","Watchmaker, Master of Dream Machinations Head","Watchmaker, Master of Dream Machinations Hand",
-        "Watchmaker, Master of Dream Machinations Body","Watchmaker, Master of Dream Machinations Feet"};
+using CSharpTest;
+using GUi;
 
+//names for all the relics
+string[] relicName =
+{
+"Passerby of Wandering Cloud Head", "Passerby of Wandering Cloud Hand", "Passerby of Wandering Cloud Body", "Passerby of Wandering Cloud Feet",
+"Musketeer of Wild Wheat Head", "Musketeer of Wild Wheat Hand", "Musketeer of Wild Wheat Body", "Musketeer of Wild Wheat Feet",
+"Knight of Purity Palace Head", "Knight of Purity Palace Hand","Knight of Purity Palace Body", "Knight of Purity Palace Feet",
+"Hunter of Glacial Forest Head","Hunter of Glacial Forest Hand" , "Hunter of Glacial Forest Body" , "Hunter of Glacial Forest Feet",
+"Champion of Streetwise Boxing Head", "Champion of Streetwise Boxing Hand", "Champion of Streetwise Boxing Body","Champion of Streetwise Boxing Feet",
+"Guard of Wuthering Snow Head", "Guard of Wuthering Snow Hand", "Guard of Wuthering Snow Body", "Guard of Wuthering Snow Feet",
+"Firesmith of Lava-Forging Head", "Firesmith of Lava-Forging Hand", "Firesmith of Lava-Forging Body", "Firesmith of Lava-Forging Feet",
+"Genius of Brilliant Stars Head","Genius of Brilliant Stars Hand","Genius of Brilliant Stars Body","Genius of Brilliant Stars Feet",
+"Band of Sizzling Thunder Head","Band of Sizzling Thunder Hand","Band of Sizzling Thunder Head Body","Band of Sizzling Thunder Head Feet",
+"Eagle of Twilight Line Head","Eagle of Twilight Line Hand","Eagle of Twilight Line Body","Eagle of Twilight Line Feet",
+"Thief of Shooting Meteor Head","Thief of Shooting Meteor Hand","Thief of Shooting Meteor Body","Thief of Shooting Meteor Feet",
+"Wastelander of Banditry Desert Head","Wastelander of Banditry Desert Hand","Wastelander of Banditry Desert Body","Wastelander of Banditry Desert Feet",
+"Longevous Disciple Head","Longevous Disciple Hand","Longevous Disciple Body","Longevous Disciple Feet",
+"Messenger Traversing Hackerspace Head","Messenger Traversing Hackerspace Hand","Messenger Traversing Hackerspace Body","Messenger Traversing Hackerspace Feet",
+"The Ashblazing Grand Duke Head","The Ashblazing Grand Duke Hand","The Ashblazing Grand Duke Body","The Ashblazing Grand Duke Feet",
+"Prisoner in Deep Confinement Head","Prisoner in Deep Confinement Hand","Prisoner in Deep Confinement Body","Prisoner in Deep Confinement Feet",
+"Pioneer Diver of Dead Waters Haed","Pioneer Diver of Dead Waters Hand","Pioneer Diver of Dead Waters Body","Pioneer Diver of Dead Waters Feet",
+"Watchmaker, Master of Dream Machinations Head","Watchmaker, Master of Dream Machinations Hand","Watchmaker, Master of Dream Machinations Body","Watchmaker, Master of Dream Machinations Feet"};
 
-Console.WriteLine("Enter the character that will use this relic");
-string character = Console.ReadLine();
+List<string> avatarData = createGui();//gets the Character the user inputted
+string character = avatarData[0];
 
-Console.WriteLine("Enter the character Level");
-string lvl = Console.ReadLine();
+string level = avatarData[1];
 
-Console.WriteLine("Enter the character Eidelon Level");
-string eidelon = Console.ReadLine();
+string eidelon = avatarData[2];
 
-Console.WriteLine("Enter the character Ascention Level");
-string ascention = Console.ReadLine();
+string ascention = avatarData[3];
 
-Console.WriteLine("Enter the characters health");
-string health = Console.ReadLine();
+string health = avatarData[4];
 
-Console.WriteLine("Enter the character WorldLevel");
-string TrailblazeLvl = Console.ReadLine();
+string TrailblazeLvl = avatarData[5];
 
-characterCreate(character, Int32.Parse(lvl), Int32.Parse(eidelon), Int32.Parse(ascention), Int32.Parse(health), Int32.Parse(TrailblazeLvl));
-
-
-foreach (string name in relicName)
+characterCreate(character, Int32.Parse(level), Int32.Parse(eidelon), Int32.Parse(ascention), Int32.Parse(health), Int32.Parse(TrailblazeLvl));
+//do the same thing as above for relics
+/*
+//display all the names for relics so that the user can input the relic name they want
+foreach (string name in relicName)//make this loop only run if the user wants to see the names for all relics
 {
     Console.WriteLine(name);
 }
 Console.WriteLine("Enter the name for the relic");
 string userRelicName = Console.ReadLine();
+
 int relicId = getRelic(userRelicName);
 
-relicCreate(userRelicName, relicId);
+relicCreate(relicId);*/
 
-
-void relicCreate(string name,int relicId)
+void relicCreate(int relicId)
 {
-    var relic = new BattleRelic
+    var relic = new BattleRelic//make it so that the mainaffixID and subaffixes can be inputed by the user
     {
         BattleRelicId = relicId,
         Level = 15,
         MainAffixId = 5,
         SubAffixes = new List<RelicAffix>
+    {
+        new RelicAffix
         {
-            new RelicAffix {
-                AffixId = 1,
-                Cnt = 2,
-                Step = 3,
-            }
+            AffixId = 1,
+            Cnt = 2,
+            Step = 3,
         }
+    }
     };
-    Console.WriteLine(relic.ToString());
+}
+
+List<string> createGui()
+{
+    Application.EnableVisualStyles();
+    Application.SetCompatibleTextRenderingDefault(false);
+
+    MainForm mainForm = new MainForm();
+    Application.Run(mainForm);
+
+    List<string> data = mainForm.getData();
+
+    return data;
 }
 void characterCreate(String name, int level, int Eidelon, int ascention, int health, int TrailblazeLvl)
 {
     int id = getCharacterNamesIndex(name);
-    int Level = level;
-    int Promotion = Eidelon;
-    int rank = ascention;
-    int hp = health;
-    int worldLevel = TrailblazeLvl;
-
-    Console.WriteLine("The Characters id is " + id);
-    Console.WriteLine("The Characters level is " + Level);
-    Console.WriteLine("The Characters Eidelon Level is " + Promotion);
-    Console.WriteLine("The Characters ascention level is " + rank);
-    Console.WriteLine("The Characters health is " + hp);
-    Console.WriteLine("The Characters Trailblaze Level is " + worldLevel);
+    List<BattleAvatar> avatars = new List<BattleAvatar>();
+    var avatar1 = new BattleAvatar
+    {
+        CharacterId = id,
+        Level = level,
+        Eidelon = Eidelon,
+        Ascention = ascention,
+        hp = health,
+        worldLevel = TrailblazeLvl,
+    };
+    avatars.Add(avatar1);//this is the format for each added character up to 4
 
 }
 
+//the functions below are used to figure out the different Ids for characters and relics (maybe can include Lightcones)
 int getCharacterId(int index)
 {
     //an array that stores the character Id's of all the characters in star rail version 2.1
@@ -112,14 +130,13 @@ int getCharacterId(int index)
 }
 
 int getCharacterNamesIndex(string name)
-{
-    //an array that stores the character names of all the characters in star rail version 2.1
+{   //an array that stores the character names of all the characters in star rail version 2.1
     String[] charactersNames = { "Acheron", "Black Swan", "Sparkle", "Dr. Ratio", "Aventurine", "Ruan Mei", "Argenti", "Huohuo", "Dan Heng Imbibitor Lunae", "Jingliu", "Bailu", "Yanqing",
     "Fu Xuan","Blade","Jing Yuan","Luocha","Topaz & Numby","Clara","Gepard","Seele","Bronya","Silver Wolf","Kafka","Welt","Himeko","Phy Male Trailblazer","Phy Female Trailblazer",
     "Fire Male Trailblazer","Fire Female Trailblazer","Misha","Gallagher","Hanya","Xueyi","Guinaifen","Yukong","Sushang","Tingyun","Qingque","Luka","Lynx","Hook","Sampo","Pela","Natasha",
     "Serval","Herta","Asta","Arlan","Dan Heng","March 7th"};
 
-    for (int i = 0; i <= charactersNames.Length; i++)
+    for (int i = 0; i < charactersNames.Length; i++)
     {
         if (charactersNames[i].ToLower() == name.ToLower())
         {
@@ -129,9 +146,8 @@ int getCharacterNamesIndex(string name)
     return 0;
 }
 int getRelic(string name)
-{   //an array that stores all the relic names in star rail version 2.1
-    
-    for (int i = 0; i <= relicName.Length; i++)
+{
+    for (int i = 0; i < relicName.Length; i++)
     {
         if (relicName[i].ToLower() == name.ToLower())
         {
@@ -148,11 +164,3 @@ int getRelicId(int index)
 
     return relicId[index];
 }
-
-
-
-
-
-
-
-
